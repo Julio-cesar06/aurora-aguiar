@@ -1,0 +1,1626 @@
+
+/* ==========================================
+   SITE DA AURORA
+   ÁLBUM DIGITAL DE MEMÓRIAS
+
+   ARQUIVO: style.css
+========================================== */
+
+
+/* ==========================================
+   01 - CORES, FONTES E TAMANHOS
+   PERSONALIZE SEU SITE AQUI
+========================================== */
+
+:root {
+
+    /* CORES PRINCIPAIS */
+
+    --cor-fundo: #fffaf8;
+
+    --cor-fundo-alternativo: #e485c3;
+
+    --cor-principal: #a64f73;
+
+    --cor-principal-escura: #843655;
+
+    --cor-texto: #44363c;
+
+    --cor-texto-suave: #75666e;
+
+    --cor-branco: #ffffff;
+
+    --cor-borda: #c03c89;
+
+
+    /* FONTES */
+
+    --fonte-titulo: 'Playfair Display', Georgia, serif;
+
+    --fonte-texto: 'DM Sans', Arial, sans-serif;
+
+
+    /* TAMANHOS DAS FOTOS */
+
+    --altura-foto: 280px;
+
+    --altura-capa: 550px;
+
+
+    /* TAMANHOS DO SITE */
+
+    --largura-site: 1150px;
+
+    --espacamento-secao: 80px;
+
+    --espacamento-cards: 25px;
+
+
+    /* BORDAS */
+
+    --borda-arredondada: 18px;
+
+
+    /* SOMBRAS */
+
+    --sombra-card: 0 8px 25px rgba(0, 0, 0, 0.07);
+
+}
+
+
+/* ==========================================
+   02 - CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 30px;
+
+}
+
+
+body {
+
+    font-family: var(--fonte-texto);
+
+    background-color: var(--cor-fundo);
+
+    color: var(--cor-texto);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+img {
+
+    display: block;
+
+    max-width: 100%;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family: var(--fonte-titulo);
+
+    line-height: 1.3;
+
+}
+
+
+p {
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ==========================================
+   03 - CONTAINER PRINCIPAL
+========================================== */
+
+.container {
+
+    width: 90%;
+
+    max-width: var(--largura-site);
+
+    margin: 0 auto;
+
+}
+
+
+/* ==========================================
+   04 - CABEÇALHO E CAPA
+========================================== */
+
+.cabecalho {
+
+    width: 100%;
+
+}
+
+
+.capa {
+
+    position: relative;
+
+    width: 100%;
+
+    height: var(--altura-capa);
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #55405c;
+
+}
+
+
+/* FOTO DA CAPA */
+
+.capa img {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+/* ESCURECIMENTO SUAVE DA CAPA */
+
+.capa::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(30, 20, 35, 0.25),
+        rgba(30, 20, 35, 0.65)
+    );
+
+}
+
+
+/* TEXTO SOBRE A CAPA */
+
+.capa-conteudo {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: var(--cor-branco);
+
+    padding: 30px;
+
+    max-width: 850px;
+
+}
+
+
+/* SUBTÍTULO DA CAPA */
+
+.capa-subtitulo {
+
+    display: inline-block;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    padding: 8px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 30px;
+
+}
+
+
+/* NOME DA AURORA */
+
+.capa h1 {
+
+    font-size: clamp(38px, 6vw, 72px);
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* FRASE DA CAPA */
+
+.capa-conteudo p {
+
+    font-size: 18px;
+
+    margin: 0;
+
+}
+
+
+/* ==========================================
+   05 - MENU DE NAVEGAÇÃO
+========================================== */
+
+.menu {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    padding: 22px 20px;
+
+    background-color: var(--cor-branco);
+
+    border-bottom: 1px solid var(--cor-borda);
+
+}
+
+
+.menu a {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: var(--cor-texto);
+
+    transition: color 0.3s ease;
+
+}
+
+
+.menu a:hover {
+
+    color: var(--cor-principal);
+
+}
+
+
+/* ==========================================
+   06 - CONFIGURAÇÕES DAS SEÇÕES
+========================================== */
+
+.secao {
+
+    padding: var(--espacamento-secao) 0;
+
+}
+
+
+/* FUNDO ALTERNADO */
+
+.secao-alternativa {
+
+    background-color: var(--cor-fundo-alternativo);
+
+}
+
+
+/* ==========================================
+   07 - TÍTULOS DAS SEÇÕES
+========================================== */
+
+.titulo-secao {
+
+    max-width: 800px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+}
+
+
+/* DETALHE ACIMA DO TÍTULO */
+
+.detalhe-titulo {
+
+    display: block;
+
+    color: var(--cor-principal);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* TÍTULO PRINCIPAL DA SEÇÃO */
+
+.titulo-secao h2 {
+
+    color: var(--cor-texto);
+
+    font-size: clamp(30px, 4vw, 46px);
+
+    margin-bottom: 18px;
+
+}
+
+
+/* DESCRIÇÃO DA SEÇÃO */
+
+.titulo-secao p {
+
+    color: var(--cor-texto-suave);
+
+    font-size: 17px;
+
+}
+
+
+/* ==========================================
+   08 - APRESENTAÇÃO DA AURORA
+========================================== */
+
+.apresentacao {
+
+    text-align: center;
+
+}
+
+
+/* TEXTO DE APRESENTAÇÃO */
+
+.texto-apresentacao {
+
+    max-width: 780px;
+
+    margin: 0 auto;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+}
+
+
+.texto-apresentacao p {
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ==========================================
+   09 - REDES SOCIAIS
+========================================== */
+
+.redes-sociais {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin: 35px 0;
+
+}
+
+
+/* BOTÕES DO INSTAGRAM */
+
+.botao-social {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 12px 28px;
+
+    background-color: var(--cor-principal);
+
+    color: var(--cor-branco);
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.botao-social:hover {
+
+    background-color: var(--cor-principal-escura);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--sombra-card);
+
+}
+
+
+/* ==========================================
+   10 - MENSAGEM ESPECIAL
+========================================== */
+
+.mensagem-especial {
+
+    max-width: 850px;
+
+    margin: 45px auto 0;
+
+    padding: 35px;
+
+    background-color: var(--cor-branco);
+
+    border: 1px solid var(--cor-borda);
+
+    border-left: 5px solid var(--cor-principal);
+
+    border-radius: var(--borda-arredondada);
+
+    box-shadow: var(--sombra-card);
+
+    text-align: left;
+
+}
+
+
+.mensagem-especial p {
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+}
+
+
+.mensagem-especial p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* ==========================================
+   11 - GALERIA DE FOTOGRAFIAS
+========================================== */
+
+.galeria {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: var(--espacamento-cards);
+
+    align-items: stretch;
+
+}
+
+
+/* ==========================================
+   12 - CARDS DAS MEMÓRIAS
+========================================== */
+
+.card-memoria {
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background-color: var(--cor-branco);
+
+    border-radius: var(--borda-arredondada);
+
+    overflow: hidden;
+
+    border: 1px solid var(--cor-borda);
+
+    box-shadow: var(--sombra-card);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.card-memoria:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* ==========================================
+   13 - TAMANHO PADRÃO DAS FOTOS
+========================================== */
+
+.foto-memoria {
+
+    width: 100%;
+
+    height: var(--altura-foto);
+
+    overflow: hidden;
+
+    background-color: #f0e5e9;
+
+}
+
+
+/* TODAS AS FOTOS DO MESMO TAMANHO */
+
+.foto-memoria img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center ;
+
+    transition: transform 0.4s ease;
+
+}
+
+
+/* ZOOM SUAVE AO PASSAR O MOUSE */
+
+.card-memoria:hover .foto-memoria img {
+
+    transform: scale(1.04);
+
+}
+
+
+/* ==========================================
+   14 - TEXTOS DOS CARDS
+========================================== */
+
+.conteudo-memoria {
+
+    padding: 25px;
+
+    flex: 1;
+
+}
+
+
+/* TÍTULO DA FOTOGRAFIA */
+
+.conteudo-memoria h3 {
+
+    color: var(--cor-principal-escura);
+
+    font-size: 23px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* DESCRIÇÃO DA FOTOGRAFIA */
+
+.conteudo-memoria p {
+
+    color: var(--cor-texto-suave);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+
+}
+
+
+.conteudo-memoria p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* ==========================================
+   15 - TEXTO DE ENCERRAMENTO
+========================================== */
+
+.encerramento-secao {
+
+    max-width: 800px;
+
+    margin: 50px auto 0;
+
+    text-align: center;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    color: var(--cor-texto-suave);
+
+}
+
+
+/* ==========================================
+   16 - MENSAGEM FINAL
+========================================== */
+
+.mensagem-final {
+
+    text-align: center;
+
+    background-color: var(--cor-fundo);
+
+}
+
+
+.mensagem-final .container {
+
+    max-width: 750px;
+
+}
+
+
+.mensagem-final h2 {
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    color: var(--cor-principal-escura);
+
+    margin-bottom: 25px;
+
+}
+
+
+.mensagem-final p {
+
+    font-size: 17px;
+
+    color: var(--cor-texto-suave);
+
+    margin-bottom: 18px;
+
+}
+
+
+/* ASSINATURA DA AURORA */
+
+.mensagem-final .assinatura {
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    color: var(--cor-principal);
+
+    margin: 30px 0;
+
+}
+
+
+/* ==========================================
+   17 - BOTÃO VOLTAR AO INÍCIO
+========================================== */
+
+.botao-voltar {
+
+    display: inline-block;
+
+    padding: 13px 30px;
+
+    background-color: var(--cor-principal);
+
+    color: var(--cor-branco);
+
+    border-radius: 30px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.botao-voltar:hover {
+
+    background-color: var(--cor-principal-escura);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ==========================================
+   18 - RODAPÉ
+========================================== */
+
+.rodape {
+
+    padding: 40px 20px;
+
+    background-color: var(--cor-fundo-alternativo);
+
+    border-top: 1px solid var(--cor-borda);
+
+    text-align: center;
+
+}
+
+
+.rodape p {
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    color: var(--cor-texto-suave);
+
+}
+
+
+.rodape p:first-child {
+
+    font-family: var(--fonte-titulo);
+
+    font-size: 21px;
+
+    color: var(--cor-principal-escura);
+
+}
+
+
+/* CRÉDITO DO PAPAI */
+
+.rodape .credito {
+
+    margin-top: 20px;
+
+    font-style: italic;
+
+    color: var(--cor-principal);
+
+}
+
+
+/* ==========================================
+   19 - RESPONSIVIDADE PARA TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+
+    :root {
+
+        --altura-capa: 450px;
+
+        --altura-foto: 260px;
+
+        --espacamento-secao: 65px;
+
+    }
+
+
+    .galeria {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+
+    }
+
+
+    .menu {
+
+        gap: 18px;
+
+    }
+
+
+    .conteudo-memoria {
+
+        padding: 22px;
+
+    }
+
+}
+
+
+/* ==========================================
+   20 - RESPONSIVIDADE PARA CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    :root {
+
+        --altura-capa: 400px;
+
+        --altura-foto: 300px;
+
+        --espacamento-secao: 50px;
+
+    }
+
+
+    body {
+
+        font-size: 15px;
+
+    }
+
+
+    .container {
+
+        width: 92%;
+
+    }
+
+
+    /* CAPA */
+
+    .capa-conteudo {
+
+        padding: 20px;
+
+    }
+
+
+    .capa h1 {
+
+        font-size: 39px;
+
+    }
+
+
+    .capa-subtitulo {
+
+        font-size: 11px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .capa-conteudo p {
+
+        font-size: 15px;
+
+    }
+
+
+    /* MENU */
+
+    .menu {
+
+        gap: 12px 18px;
+
+        padding: 18px 12px;
+
+    }
+
+
+    .menu a {
+
+        font-size: 13px;
+
+    }
+
+
+    /* TÍTULOS */
+
+    .titulo-secao {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .titulo-secao h2 {
+
+        font-size: 31px;
+
+    }
+
+
+    .titulo-secao p {
+
+        font-size: 15px;
+
+    }
+
+
+    /* APRESENTAÇÃO */
+
+    .texto-apresentacao {
+
+        font-size: 16px;
+
+    }
+
+
+    /* REDES SOCIAIS */
+
+    .redes-sociais {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .botao-social {
+
+        width: 100%;
+
+    }
+
+
+    /* MENSAGEM ESPECIAL */
+
+    .mensagem-especial {
+
+        padding: 25px;
+
+    }
+
+
+    .mensagem-especial p {
+
+        font-size: 15px;
+
+    }
+
+
+    /* FOTOS */
+
+    .galeria {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .foto-memoria {
+
+        height: var(--altura-foto);
+
+    }
+
+
+    /* CARDS */
+
+    .conteudo-memoria {
+
+        padding: 22px;
+
+    }
+
+
+    .conteudo-memoria h3 {
+
+        font-size: 22px;
+
+    }
+
+
+    .conteudo-memoria p {
+
+        font-size: 15px;
+
+    }
+
+
+    /* MENSAGEM FINAL */
+
+    .mensagem-final h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .mensagem-final p {
+
+        font-size: 16px;
+
+    }
+
+}
+
+
+/* ==========================================
+   21 - CELULARES PEQUENOS
+========================================== */
+
+@media (max-width: 360px) {
+
+    .capa h1 {
+
+        font-size: 32px;
+
+    }
+
+
+    .menu {
+
+        gap: 10px;
+
+    }
+
+
+    .menu a {
+
+        font-size: 12px;
+
+    }
+
+
+    .foto-memoria {
+
+        height: 250px;
+
+    }
+
+}
+
+
+/* ==========================================
+   22 - ACESSIBILIDADE
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior: auto;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+    }
+
+}
+
+
+
+/* ==========================================
+   NOVA PÁGINA INICIAL
+   CARDS DOS CAPÍTULOS
+========================================== */
+
+/* BOTÃO DA CAPA */
+
+.botao-capa {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 28px;
+
+    background-color: #ffffff;
+    color: #843655;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.botao-capa:hover {
+    background-color: #f8edf0;
+    transform: translateY(-3px);
+}
+
+
+/* FRASE DE DESTAQUE */
+
+.frase-destaque {
+    margin-top: 25px;
+
+    font-family: var(--fonte-titulo);
+    font-size: 24px;
+    font-style: italic;
+
+    color: var(--cor-principal);
+}
+
+
+/* GALERIA DOS CAPÍTULOS */
+
+.galeria-capitulos {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+
+    align-items: stretch;
+}
+
+
+/* CARD INDIVIDUAL */
+
+.card-capitulo {
+    min-width: 0;
+
+    background-color: var(--cor-branco);
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid var(--cor-borda);
+
+    box-shadow: var(--sombra-card);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.card-capitulo:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* LINK QUE ENVOLVE TODO O CARD */
+
+.link-capitulo {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    color: inherit;
+}
+
+
+/* ÁREA DA FOTO */
+
+.foto-capitulo {
+    width: 100%;
+    height: 280px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-color: #f8edf0;
+}
+
+
+/* FOTOGRAFIA SEM CORTES */
+
+.foto-capitulo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* ÁREA DO TEXTO */
+
+.conteudo-capitulo {
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+/* NÚMERO DO CAPÍTULO */
+
+.numero-capitulo {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: var(--cor-principal);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* TÍTULO */
+
+.conteudo-capitulo h3 {
+    font-size: 25px;
+
+    color: var(--cor-principal-escura);
+
+    margin-bottom: 15px;
+}
+
+
+/* DESCRIÇÃO */
+
+.conteudo-capitulo p {
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: var(--cor-texto-suave);
+
+    margin-bottom: 25px;
+}
+
+
+/* BOTÃO DO CAPÍTULO */
+
+.botao-capitulo {
+    display: inline-block;
+    align-self: flex-start;
+
+    margin-top: auto;
+
+    padding: 11px 20px;
+
+    background-color: var(--cor-principal);
+    color: #ffffff;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: background-color 0.3s ease;
+}
+
+.card-capitulo:hover .botao-capitulo {
+    background-color: var(--cor-principal-escura);
+}
+
+
+/* ACESSIBILIDADE DO TECLADO */
+
+.link-capitulo:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: -3px;
+}
+
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+
+    .galeria-capitulos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .galeria-capitulos {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .foto-capitulo {
+        height: 320px;
+    }
+
+    .conteudo-capitulo {
+        padding: 25px;
+    }
+
+    .conteudo-capitulo h3 {
+        font-size: 24px;
+    }
+
+    .botao-capa {
+        font-size: 13px;
+        padding: 12px 20px;
+    }
+
+}
+
+
+
+/* ==========================================
+   PÁGINAS DOS CAPÍTULOS
+========================================== */
+
+/* CABEÇALHO */
+
+.cabecalho-capitulo {
+    padding: 65px 20px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #fff6f8,
+        #f3e3eb
+    );
+
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.cabecalho-capitulo .container {
+    max-width: 850px;
+}
+
+.cabecalho-capitulo h1 {
+    font-size: clamp(32px, 5vw, 54px);
+
+    color: var(--cor-principal-escura);
+
+    margin: 18px 0;
+}
+
+.cabecalho-capitulo p {
+    font-size: 17px;
+
+    color: var(--cor-texto-suave);
+}
+
+
+/* LINK VOLTAR AO INÍCIO */
+
+.link-inicio {
+    display: inline-block;
+
+    margin-bottom: 30px;
+
+    color: var(--cor-principal);
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.link-inicio:hover {
+    text-decoration: underline;
+}
+
+
+/* FOTOS DO CAPÍTULO */
+
+.secao-capitulo .galeria {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.secao-capitulo .foto-memoria {
+    height: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f8edf0;
+}
+
+.secao-capitulo .foto-memoria img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* TÍTULOS DAS MEMÓRIAS */
+
+.secao-capitulo .conteudo-memoria h2 {
+    font-size: 24px;
+
+    color: var(--cor-principal-escura);
+
+    margin-bottom: 15px;
+}
+
+
+/* NAVEGAÇÃO ENTRE CAPÍTULOS */
+
+.navegacao-capitulos {
+    padding: 45px 0;
+
+    background-color: var(--cor-fundo-alternativo);
+
+    border-top: 1px solid var(--cor-borda);
+}
+
+.navegacao-capitulos .container {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+/* BOTÕES */
+
+.botao-navegacao {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.botao-anterior {
+    background-color: #ffffff;
+
+    color: var(--cor-principal-escura);
+
+    border: 1px solid var(--cor-borda);
+}
+
+.botao-proximo {
+    background-color: var(--cor-principal);
+
+    color: #ffffff;
+}
+
+.botao-navegacao:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .cabecalho-capitulo {
+        padding: 45px 15px;
+    }
+
+    .cabecalho-capitulo h1 {
+        font-size: 34px;
+    }
+
+    .cabecalho-capitulo p {
+        font-size: 15px;
+    }
+
+    .secao-capitulo .galeria {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .secao-capitulo .foto-memoria {
+        height: 350px;
+    }
+
+    .navegacao-capitulos .container {
+        flex-direction: column;
+    }
+
+    .botao-navegacao {
+        width: 100%;
+        text-align: center;
+    }
+
+}
